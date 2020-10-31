@@ -1,12 +1,22 @@
-public class Pattern2 {
+public class Pattern2
+{
+    public static void main(String args[])
+    {
+        int rows;
+        int columns;
+        int number;
+        int n=5;
 
-    public static void main (String[] args){
-//1
-//1 2
-//1 2 3
-//1 2 3 4
-//1 2 3 4 5
+        for(rows=0; rows<n; rows++)
+        {
+            number=1;
+            for(columns=0; columns<=rows; columns++)
+            {
+                System.out.print(number+ " ");
+                number++;
+            }
 
-
+            System.out.println();
+        }
     }
 }
