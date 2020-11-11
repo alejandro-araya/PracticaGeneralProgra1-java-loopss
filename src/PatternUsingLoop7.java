@@ -4,19 +4,15 @@ public class PatternUsingLoop7 {
     {
         int rows;
         int columns;
-        int number;
-        int n=5;
 
-        for(rows=0; rows<n; rows++)
+        for ( rows = 5;  rows >= 1; rows--)
         {
-            number=1;
-            for(columns=0; columns<=rows; columns++)
+            for (columns = rows; columns >= 1; columns--)
             {
-                System.out.print(number+ " ");
-                number++;
+                System.out.print(columns+" ");
             }
-
             System.out.println();
         }
+        }
     }
-}
+
