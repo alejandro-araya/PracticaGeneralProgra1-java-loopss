@@ -1,33 +1,35 @@
-import com.sun.source.tree.WhileLoopTree;
-
-import java.lang.Math;
-import java.util.Scanner;
-
-
 public class PrimeNumbers11 {
+
     public static void main(String[] args) {
+        int start = 25;
+        int end = 50;
+        System.out.println("Prime numbers between " + start + " and " + end + " are: ");
+        /**
+         * Here I call the function isPrime
+         */
 
-        int primeNumber = 0;
+        for(int var = start; var <= end; ++var){
+            if (isPrime(var) == true){
+                System.out.println(var);
+            }
+        }
+    }
 
-        while (primeNumber < 5 || primeNumber > 300) {
-            Scanner pln = new Scanner(System.in);
-            System.out.println("Type a number between 5 and 300");
-            primeNumber = pln.nextInt();
-        }//while
-
-        double squareRootFromUsersNumbers = Math.sqrt(primeNumber);
-
-        int counter = 2;
-        while(counter <= squareRootFromUsersNumbers){
-            if (primeNumber % counter == 0) {
-                System.out.println("The number is not prime.");
-                break;
-            }//if
-            ++counter;
-            if(counter > squareRootFromUsersNumbers) {
-                System.out.println("The number is prime.");
-            }//if
-        }//while
-    }//main
-
-}//prime
+    /**
+     * This function validate if the number is prime or not
+     * @param start
+     * @return
+     */
+    public static boolean isPrime(int start){
+        int divisor = 2;
+        int squareRootOfNumber = (int)Math.sqrt(start);
+        boolean isPrime = true;
+        while (divisor <= squareRootOfNumber && isPrime){
+            if(start % divisor == 0) {
+                isPrime = false;
+            }
+            divisor++;
+        }
+        return isPrime;
+    }
+}
